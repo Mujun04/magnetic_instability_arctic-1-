@@ -2,11 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-  <meta name="keywords" content="template, sample, html">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Beneath the Melting Ice: Magnetic Instability Threatening New Arctic Shipping Paths</title>
+  <title>Beneath the Melting Ice: Magnetic Instability Threatening Arctic Shipping Paths</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -14,15 +11,26 @@
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.png">
+
+  <style>
+    .centered-img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 75%;
+    }
+  </style>
+
 </head>
+
 <body>
 
+<!-- Header -->
 <section class="hero is-light">
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="title is-2">
-        Beneath the Melting Ice: <br> Magnetic Instability Threatening New Arctic Shipping Paths
+        Beneath the Melting Ice: Magnetic Instability Threatening New Arctic Shipping Paths
       </h1>
       <h2 class="subtitle is-5">
         Mujun Kim (mkim264@gmu.edu), Seungeun Choi (schoi72@gmu.edu)<br>
@@ -32,106 +40,115 @@
   </div>
 </section>
 
+<!-- Introduction -->
 <section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p> New abstract. </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-  <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Introduction</h2>
 
     <p>
-      Recent climate data shows that the Arctic is warming much faster than the global average,
-      and the surface temperature graph clearly shows a strong upward trend (Figure 1).
-      As the ocean becomes warmer, the Arctic sea-ice extent continues to decrease (Figure 2),
-      especially in summer.
+      Recent climate data shows that the Arctic is warming much faster than the global average.
+      As the ocean becomes warmer, Arctic summer sea-ice continues to decline, opening hidden
+      waters that were once blocked by ice. Because of this, shipping routes such as the Northern
+      Sea Route and the Northwest Passage are becoming more accessible.
     </p>
 
     <p>
-      Because of this, hidden waters that were once blocked by ice are beginning to open,
-      and new shipping routes such as the Northern Sea Route and the Northwest Passage are
-      becoming easier to travel (Figure 3).
+      However, the Arctic is also an area where the Earth's magnetic field shifts dramatically, which
+      can reduce the accuracy of satellite navigation systems (GPS/GNSS).
+      This study visualizes magnetic hotspots and overlays them with Arctic shipping routes
+      to identify potential areas of navigation instability.
     </p>
 
-    <p>
-      However, the Arctic is also a place where the magnetic field can change sharply,
-      which can reduce the accuracy of GPS and satellite navigation. This study maps magnetic
-      hotspots and compares them with Arctic shipping routes to determine where navigation errors
-      may occur in the future.
-    </p>
-    <!-- Figure 1 -->
-    <figure class="image has-text-centered">
-      <img src="./static/images/global_temp.png" style="width:75%">
-      <figcaption>Figure 1. Global temperature anomalies since the mid-19th century.</figcaption>
+    <figure>
+      <img src="./static/images/global_temp.png" class="centered-img">
+      <figcaption class="has-text-centered">Figure 1. Global temperature anomalies since 1850.</figcaption>
     </figure>
 
-    <!-- Figure 2 -->
-    <figure class="image has-text-centered">
-      <img src="./static/images/seaice_decline.png" style="width:75%">
-      <figcaption>Figure 2. Arctic summer sea-ice decline (1978–2021).</figcaption>
+    <figure>
+      <img src="./static/images/seaice_decline.png" class="centered-img">
+      <figcaption class="has-text-centered">Figure 2. Arctic summer sea-ice decline (1978–2021).</figcaption>
     </figure>
 
-    <!-- Figure 3 -->
-    <figure class="image has-text-centered">
-      <img src="./static/images/arctic_routes.png" style="width:75%">
-      <figcaption>Figure 3. New Arctic shipping routes enabled by sea-ice loss.</figcaption>
+    <figure>
+      <img src="./static/images/arctic_routes.png" class="centered-img">
+      <figcaption class="has-text-centered">Figure 3. New Arctic shipping routes opened by declining sea-ice.</figcaption>
     </figure>
+
   </div>
 </section>
 
-  <!-- Research Questions -->
+<!-- Research Questions -->
 <section class="section has-background-light">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Research Questions</h2>
-
-    <div class="content has-text-centered">
-      <p>
-        As Arctic sea-ice loss opens the Northern Sea Route and Northwest Passage, can
-        magnetic-field hotspot maps show which segments of these routes are most vulnerable
-        to GNSS inaccuracy?
-      </p>
-    </div>
+    <p class="has-text-centered">
+      As Arctic sea-ice loss opens major Arctic routes, can magnetic-field hotspot maps reveal which
+      route segments are most vulnerable to GNSS inaccuracy?
+    </p>
   </div>
 </section>
 
-<!-- Results Section -->
+<!-- Results -->
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Results</h2>
 
-    <!-- Magnetic Inclination -->
-    <figure class="image has-text-centered">
-      <img src="./static/images/magnetic_inclination.png" style="width:75%">
-      <figcaption>
-        Figure 4. Magnetic inclination in the Arctic based on WMM2025.
+    <figure>
+      <img src="./static/images/magnetic_inclination.png" class="centered-img">
+      <figcaption class="has-text-centered">
+        Figure 4. Magnetic inclination in the Arctic (WMM2025).
       </figcaption>
     </figure>
 
-    <!-- Magnetic Hotspots -->
-    <figure class="image has-text-centered">
-      <img src="./static/images/magnetic_hotspots.png" style="width:70%">
-      <figcaption>
-        Figure 5. Magnetic-field gradient “hotspots” overlapping with Arctic routes.
+    <figure>
+      <img src="./static/images/magnetic_hotspots.png" class="centered-img" style="width:70%;">
+      <figcaption class="has-text-centered">
+        Figure 5. Magnetic-field gradient "hotspots" overlapping Arctic routes.
       </figcaption>
     </figure>
 
-    <!-- AIS/GNSS Errors -->
-    <figure class="image has-text-centered">
-      <img src="./static/images/gnss_error.png" style="width:75%">
-      <figcaption>
-        Figure 6. Satellite-navigation error density near magnetic hotspots.
+    <figure>
+      <img src="./static/images/gnss_error.png" class="centered-img">
+      <figcaption class="has-text-centered">
+        Figure 6. Simulated AIS/GNSS error density near magnetic hotspots.
+        <br><br>
+        <strong>Note:</strong> Because raw GNSS error data in the Arctic is not publicly available,
+        this visualization is simulation-based. The model increases error probability near strong
+        magnetic gradients using patterns reported in polar navigation research. Although simulated,
+        it reflects realistic spatial instability trends documented in existing literature.
       </figcaption>
     </figure>
 
+  </div>
+</section>
+
+<!-- Methods -->
+<section class="section has-background-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Methods</h2>
+
+    <p>
+      • Magnetic inclination and gradient values were retrieved from the World Magnetic Model (WMM2025),
+      projected to a 2.5° × 2.5° grid over the Arctic region.<br>
+      • Arctic shipping routes were digitized using public polar-route maps and manually georeferenced.<br>
+      • To estimate possible GNSS instability zones, a simulation model was applied because actual
+      AIS/GNSS error measurements in the Arctic remain restricted. Error probability increases with the
+      steepness of magnetic gradients, following distance-decay functions commonly used in GNSS research.<br>
+    </p>
+  </div>
+</section>
+
+<!-- Limitations -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Limitations</h2>
+
+    <p>
+      • Real GNSS error data is limited due to scarce satellite coverage and restricted commercial datasets.<br>
+      • Figure 6 is simulation-based—not a direct measurement—but reflects realistic patterns described in
+      Arctic navigation studies.<br>
+      • Future versions can incorporate commercial AIS datasets or naval-grade GNSS logs to improve accuracy.<br>
+    </p>
   </div>
 </section>
 
@@ -140,13 +157,12 @@
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Key Terms</h2>
     <ul>
-      <li><strong>Declination:</strong> Angle difference between magnetic and true geographic north.</li>
+      <li><strong>Declination:</strong> Angular difference between magnetic north and true north.</li>
       <li><strong>GNSS:</strong> Global Navigation Satellite System.</li>
-      <li><strong>GPS:</strong> U.S.-based global satellite navigation system.</li>
-      <li><strong>Magnetic Instability:</strong> Rapid magnetic field change that reduces GPS accuracy.</li>
-      <li><strong>NSR:</strong> Northern Sea Route along Russia′s Arctic coast.</li>
-      <li><strong>NWP:</strong> Northwest Passage through the Canadian Arctic.</li>
-      <li><strong>WMM:</strong> World Magnetic Model for navigation and mapping.</li>
+      <li><strong>Magnetic Gradient:</strong> Rate of magnetic-field change across space.</li>
+      <li><strong>NSR:</strong> Northern Sea Route.</li>
+      <li><strong>NWP:</strong> Northwest Passage.</li>
+      <li><strong>WMM:</strong> World Magnetic Model.</li>
     </ul>
   </div>
 </section>
@@ -157,203 +173,13 @@
     <h2 class="title is-3 has-text-centered">Conclusion</h2>
 
     <p>
-      Our maps show that some parts of the Northern Sea Route and Northwest Passage
-      have larger magnetic-gradient changes. These areas overlap strongly with GNSS navigation
-      errors. This suggests that future Arctic shipping will require better navigation tools,
-      updated magnetic models, and real-time monitoring of the magnetic environment to ensure
-      safe travel in melting-ice regions.
+      Our mapping indicates that some sections of the Northern Sea Route and Northwest Passage pass
+      through areas of steep magnetic gradients, where GNSS accuracy may be reduced. As Arctic shipping
+      increases due to sea-ice loss, updated magnetic models and real-time navigation monitoring will be
+      essential to ensure safe travel through these regions.
     </p>
   </div>
 </section>
-
-<!-- References -->
-<section class="section has-background-light">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">References</h2>
-
-    <ul>
-      <li>NOAA National Centers for Environmental Information (NCEI)</li>
-      <li>ESA CryoSat Arctic Sea-Ice Data</li>
-      <li>World Magnetic Model 2025</li>
-      <li>Arctic Council Shipping Assessments</li>
-    </ul>
-  </div>
-</section>
-
-
-<footer class="footer">
-  <div class="content has-text-centered">
-    <p>
-      Created for CDS 301/501: Scientific Information and Data Visualization (Fall 2025), George Mason University Korea.
-    </p>
-  </div>
-</footer>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-<h2 class="title is-3 has-text-centered">A Catchy Title for the First Section</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt lectus quis libero interdum, non facilisis sapien aliquet. Sed sit amet ex hendrerit, dignissim purus sit amet, blandit est. Integer nec mauris at dolor egestas volutpat. Quisque efficitur metus vitae dolor fermentum, quis varius neque consectetur.
-      </p>
-    <figure class="image has-text-centered">
-        <img src="./static/images/Template_bar.png"
-       alt="Playfair 1801 chart"
-       class="img-small75"
-       style="display: inline-block; width: 75%; height: auto;">
-      <figcaption class="is-size-6 has-text-grey">
-        Figure 1. Visual representation of the project’s workflow using the template bar.
-      </figcaption>
-    </figure>
-    <div class="content has-text-justified">
-      <p>
-        Curabitur suscipit urna ut felis vulputate, nec dictum orci vehicula. Mauris aliquet, nunc et dignissim tincidunt, urna est tempus lacus, ut suscipit ex tellus a ipsum. Donec pretium tempor justo vitae molestie. Fusce ullamcorper leo id purus sodales, at cursus felis lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-      </p>
-    </div>
-  </div>
-</section>
-
-  <section class="section">
-  <div class="container is-max-desktop">
-<h2 class="title is-3 has-text-centered">A Catchy Title for the First Section</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt lectus quis libero interdum, non facilisis sapien aliquet. Sed sit amet ex hendrerit, dignissim purus sit amet, blandit est. Integer nec mauris at dolor egestas volutpat. Quisque efficitur metus vitae dolor fermentum, quis varius neque consectetur.
-      </p>
-    <div class="content has-text-justified">
-      <p>
-        Curabitur suscipit urna ut felis vulputate, nec dictum orci vehicula. Mauris aliquet, nunc et dignissim tincidunt, urna est tempus lacus, ut suscipit ex tellus a ipsum. Donec pretium tempor justo vitae molestie. Fusce ullamcorper leo id purus sodales, at cursus felis lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-      </p>
-    </div>
-  </div>
-</section>
-  
-
-<section class="section">
-<div class="container is-max-desktop">
-  <div class="columns is-centered">
-
-    <!-- Feature A -->
-    <div class="column">
-      <div class="content">
-        <h2 class="title is-3 has-text-centered">Feature A</h2>
-        <p>
-          In this section, we introduce Feature A, a core component of the project that plays a pivotal role in achieving the overall goals. The importance of this feature stems from its ability to bridge critical gaps in existing workflows, deliver performance enhancements, and unlock new possibilities for visualization, analysis, or interactivity.
-        </p>
-        <!-- Optional media/image/video goes here -->
-        <!-- <img src="./static/images/featureA.png" alt="Feature A illustration"> -->
-      </div>
-    </div>
-    <!-- /Feature A -->
-
-    <!-- Feature B -->
-    <div class="column">
-      <div class="content">
-        <h2 class="title is-3 has-text-centered">Feature B</h2>
-        <p>
-          Feature B is also important. In this section, we introduce Feature B, another core component of the project that plays a pivotal role in achieving the overall goals. The importance of this feature stems from its ability to bridge critical gaps in existing workflows, deliver performance enhancements, and unlock new possibilities for visualization, analysis, or interactivity.
-        </p>
-        <!-- Optional media/image/video goes here -->
-        <!-- <img src="./static/images/featureB.png" alt="Feature B illustration"> -->
-      </div>
-    </div>
-    <!-- /Feature B -->
-
-  </div>
-</div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-<h2 class="title is-3 has-text-centered">Another Catchy Title for the Second Section</h2>
-    <figure class="image has-text-centered">
-      <img src="./static/images/waterfall_example.png" alt="Template bar illustration">
-<figcaption class="is-size-6 has-text-grey">
-  Figure 2. Waterfall chart, which shows the cumulative breakdown of changes (positive and negative) across different categories, illustrating how each step contributes to the final total.  
-</figcaption>
-    </figure>
-
-    <div class="content has-text-justified">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt lectus quis libero interdum, non facilisis sapien aliquet. Sed sit amet ex hendrerit, dignissim purus sit amet, blandit est. Integer nec mauris at dolor egestas volutpat. Quisque efficitur metus vitae dolor fermentum, quis varius neque consectetur. Curabitur suscipit urna ut felis vulputate, nec dictum orci vehicula. Mauris aliquet, nunc et dignissim tincidunt, urna est tempus lacus, ut suscipit ex tellus a ipsum. Donec pretium tempor justo vitae molestie. Fusce ullamcorper leo id purus sodales, at cursus felis lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-<h2 class="title is-3 has-text-centered">Another Catchy Title for the Third Section</h2>
-    <figure class="image has-text-centered">
-<div style="text-align: center;">
-  <img src="./static/images/P_05-playfair-1801-plate1.png"
-       alt="Playfair 1801 chart"
-       class="img-small75"
-       style="display: inline-block; width: 75%; height: auto;">
-</div>
-<figcaption class="is-size-6 has-text-grey">
-  Figure 3. William Playfair's 1801 'Chart of the Extent, Population and Revenue of the Principal Nations of Europe.' The central pie displays each nation's share of European land area, while red and yellow radial bars show, respectively, population size and annual government revenue. First printed in <em>The Statistical Breviary</em>, it is widely regarded as the earliest known multi-slice pie chart and highlights the contrast between territorial extent, demographic weight, and fiscal power.
-</figcaption>
-
-    </figure>
-
-    <div class="content has-text-justified">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt lectus quis libero interdum, non facilisis sapien aliquet. Sed sit amet ex hendrerit, dignissim purus sit amet, blandit est. Integer nec mauris at dolor egestas volutpat. Quisque efficitur metus vitae dolor fermentum, quis varius neque consectetur. Curabitur suscipit urna ut felis vulputate, nec dictum orci vehicula. Mauris aliquet, nunc et dignissim tincidunt, urna est tempus lacus, ut suscipit ex tellus a ipsum. Donec pretium tempor justo vitae molestie. Fusce ullamcorper leo id purus sodales, at cursus felis lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Outro</h2>
-    <div class="content">
-      <p>
-        This is the last section. In this part, we bring together all the ideas explored throughout the project, reflecting on what was learned, what worked well, and what challenges emerged. We revisit the core objectives, summarizing how each was addressed, and highlight the most significant insights that have arisen from the work. Moreover, we outline how the outcomes contribute to the broader field, what implications they may have for future research or real-world applications, and why these findings matter. In addition, this section proposes concrete next steps: further experiments, methods refinement, validation on new datasets, collaborative extensions, or deployment scenarios. We also discuss potential limitations, acknowledge open questions, and suggest areas that merit deeper investigation.
-      </p>
-    </div>
-  </div>
-</section>
-
-  <section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">References and Data Sources</h2>
-    <div class="content has-text-justified">
-  <p>  
-    1. Black, Joe; Doe, Jane; and Lee, Maria. “Template Paper Title on Data Analysis.” <em>Journal of Data Analysis & Visualization</em> 30, no. 1 (2023): 100-120.  
-  </p>
-  <p>  
-    2. White, Chris; Green, Anna; and Kim, Sam. “Template Methods for Interactive Dashboards.” <em>International Journal of Interactive Visualization</em> 25, no. 2 (2022): 210-234.  
-  </p>
-  <p>  
-    3. Miller, Pat; Gomez, Sofia; and Zhang, Lin. “Template Techniques for Labels & Annotation in Multidimensional Graphs.” <em>Computational Graphics & Data Systems</em> 12, no. 3 (2024): 45-70.  
-  </p>
-  <p>  
-    4. Wright, Ben; Park, Soo; and O’Neil, Pat. “Template Approaches to Temporal Flow Visualization.” <em>Decision Support & Data Analytics</em> 14, no. 3 (2021): 300-320.  
-  </p>
-    </div>
-  </div>
-</section>
-
-
-<footer class='footer footer-compact'>
-  <div class="container">
-    <div class="content has-text-centered">
-      <p>
-       This website was created as coursework for <strong>CDS 301 / 501: Scientific Information and Data Visualization (Fall 2025) at George Mason Korea</strong>.
-      </p>
-      <p>
-        This website is licensed under a <a rel="license"
-        href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-      </p>
-      <p>
-        Template design is based on the example site available at <a href="https://utkuozbulak.github.io/cds_301_template_website/" target="_blank" rel="noopener">CDS 301 Template Website</a>, which itself uses a layout from the <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener">Nerfies project site</a>.
-      </p>
-    </div>
-  </div>
-</footer>
-
 
 </body>
 </html>
-
