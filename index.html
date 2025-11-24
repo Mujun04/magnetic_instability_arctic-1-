@@ -70,7 +70,18 @@ h2.title::after {
   box-shadow: 0 3px 16px rgba(0,0,0,0.08);
 }
 
-/* Figures */
+/* Findings Box */
+.findings-box {
+  background: rgba(255,255,255,0.93);
+  border: 2px solid var(--cyan);
+  border-radius: 14px;
+  padding: 1.5rem 1.8rem;
+  margin: 3rem auto;
+  width: min(90%, 880px);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+}
+
+/* Figures + Hover Zoom */
 figure {
   background: var(--glass-bg);
   border: 1px solid var(--border-soft);
@@ -79,6 +90,11 @@ figure {
   width: min(85%, 740px);
   margin: 3rem auto;
   box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+  transition: transform .35s ease;
+}
+
+figure:hover {
+  transform: scale(1.03);
 }
 
 .centered-img {
@@ -153,9 +169,7 @@ a { color: var(--cyan); }
 
 <body>
 
-<!-- ---------------------------------------------------
-     HERO
---------------------------------------------------- -->
+<!-- HERO -->
 <section class="hero fade-section">
   <div class="hero-body">
     <h1 class="hero-title">Beneath the Melting Ice:</h1>
@@ -169,10 +183,7 @@ a { color: var(--cyan); }
   </div>
 </section>
 
-
-<!-- ---------------------------------------------------
-     ABSTRACT
---------------------------------------------------- -->
+<!-- ABSTRACT -->
 <section class="section fade-section">
   <div class="container is-max-desktop">
     <h2 class="title">Abstract</h2>
@@ -204,8 +215,6 @@ a { color: var(--cyan); }
     </div>
   </div>
 </section>
-
-
 <!-- ---------------------------------------------------
      CHAPTER 1 — THE CHANGING ARCTIC
 --------------------------------------------------- -->
@@ -243,6 +252,7 @@ a { color: var(--cyan); }
 </section>
 
 
+
 <!-- ---------------------------------------------------
      CHAPTER 2 — WHY THE ARCTIC ROUTES MATTER
 --------------------------------------------------- -->
@@ -272,8 +282,6 @@ a { color: var(--cyan); }
 
   </div>
 </section>
-
-
 <!-- ---------------------------------------------------
      CHAPTER 3 — THE HIDDEN NAVIGATION PROBLEM
 --------------------------------------------------- -->
@@ -345,11 +353,20 @@ a { color: var(--cyan); }
       will shape how safely and efficiently vessels can navigate these newly opened waters.
     </div>
 
+    <!-- ⭐ FINDINGS BOX (새로 추가된 부분) -->
+    <div class="findings-box">
+      <h3 style="font-weight:600; margin-bottom:12px; color:#0b2742;">
+        Key Findings
+      </h3>
+      <ul style="margin-left: 1.1rem;">
+        <li>• Magnetic hotspots cluster along the Siberian shelf and Canadian Arctic Archipelago.</li>
+        <li>• The eastern NSR crosses some of the steepest magnetic gradients, increasing GNSS drift.</li>
+        <li>• Certain sections of the NWP show sensitivity to GNSS errors due to narrow channels and shifting ice.</li>
+      </ul>
+    </div>
+
   </div>
 </section>
-
-
-
 <!-- ---------------------------------------------------
      WHY IT MATTERS
 --------------------------------------------------- -->
