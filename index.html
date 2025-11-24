@@ -4,292 +4,482 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Beneath the Melting Ice — Arctic Navigation Risk Dashboard</title>
+<title>Beneath the Melting Ice — Arctic Navigation Dashboard</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./static/css/bulma.min.css">
 
 <style>
 
-/* GLOBAL STYLE */
+/* ---------------------------------------------------
+   GLOBAL — Light Ice Blue Navigation Dashboard
+--------------------------------------------------- */
+
 body {
-  background: #e8f6ff;
+  background: #eaf6ff;
   font-family: 'Inter', sans-serif;
   color: #0b2742;
   line-height: 1.65;
+  overflow-x: hidden;
 }
 
-/* COLORS */
 :root {
-  --ice-blue: #1b6ea8;
-  --cyan-glow: #38b6ff;
-  --soft-white: #e9f5ff;
-  --navy-dark: #0a1e33;
+  --navy: #0b2742;
+  --ice: #eaf6ff;
+  --cyan: #1ec7ff;
+  --glass-bg: rgba(255,255,255,0.83);
+  --border-soft: #bdd8ee;
 }
 
-/* SECTIONS */
 .section {
   padding-top: 4.2rem;
   padding-bottom: 4.2rem;
 }
 
-/* HEADINGS */
+/* Titles */
 h2.title {
+  color: var(--navy);
   text-transform: uppercase;
-  letter-spacing: 1.1px;
-  font-weight: 400;
-  color: var(--ice-blue);
+  letter-spacing: 1.4px;
+  font-weight: 300;
   text-align: center;
-  margin-bottom: 2.2rem;
+  margin-bottom: 2.8rem;
   position: relative;
 }
 
 h2.title::after {
   content: "";
-  width: 80px;
+  width: 70px;
   height: 3px;
-  background: var(--cyan-glow);
+  background: var(--cyan);
   position: absolute;
   bottom: -12px;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 6px;
+  border-radius: 5px;
 }
 
-/* FIGURE CARDS */
-figure {
-  background: white;
-  padding: 18px;
+/* Cards */
+.arctic-box {
+  background: var(--glass-bg);
+  padding: 1.7rem;
   border-radius: 12px;
-  border: 1px solid #d7eaff;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  margin: 2rem auto;
-  width: min(85%, 720px);
+  border-left: 4px solid var(--cyan);
+  border: 1px solid var(--border-soft);
+  margin-bottom: 2rem;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.08);
+}
+
+/* Figures */
+figure {
+  background: var(--glass-bg);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  padding: 18px;
+  width: min(85%, 740px);
+  margin: 3rem auto;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
 }
 
 .centered-img {
+  width: 100%;
+  max-width: 650px;
   display: block;
   margin: auto;
-  width: 100%;
-  max-width: 700px;
   border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.15);
 }
 
-/* CONTENT BOXES */
-.arctic-box {
-  background: white;
-  border-left: 5px solid var(--cyan-glow);
-  padding: 1.6rem;
-  border-radius: 10px;
-  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
-  margin-bottom: 2rem;
+/* Abstract */
+.abstract-box {
+  background: var(--glass-bg);
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  width: min(90%, 880px);
+  margin: auto;
+  margin-bottom: 3rem;
+  box-shadow: 0 3px 18px rgba(0,0,0,0.1);
 }
 
-/* HERO */
+/* Hero */
 .hero {
-  background-image: url('./static/images/Arcticroute.png');
+  background-image:
+    linear-gradient(rgba(255,255,255,0.92), rgba(232,245,255,0.88)),
+    url('./static/images/Arcticroute.png');
   background-size: cover;
   background-position: center;
   height: 430px;
-  position: relative;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(8, 22, 36, 0.55);
 }
 
 .hero-body {
-  position: relative;
-  z-index: 2;
-  padding-top: 6rem;
   text-align: center;
-  color: white;
+  padding-top: 6rem;
 }
 
 .hero-title {
-  font-size: 2.8rem;
+  color: var(--navy);
+  font-size: 2.5rem;
   font-weight: 300;
 }
 
 .hero-sub {
-  color: #cfeaff;
-  font-size: 1.3rem;
-  margin-top: 0.8rem;
+  color: var(--cyan);
+  font-size: 1.8rem;
+  margin-top: .6rem;
 }
 
-/* ANIMATION */
-.fade-section { opacity:0; transform:translateY(30px); transition: all .9s ease-out; }
-.fade-section.visible { opacity:1; transform:none; }
+.hero-names {
+  margin-top: 1.2rem;
+  color: #0d314f;
+}
+
+/* Fade-in */
+.fade-section {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+a { color: var(--cyan); }
 
 </style>
 </head>
 
-
 <body>
 
-<!-- HERO -->
-<section class="hero">
+<!-- ---------------------------------------------------
+     HERO
+--------------------------------------------------- -->
+<section class="hero fade-section">
   <div class="hero-body">
-    <h1 class="hero-title">Beneath the Melting Ice</h1>
+    <h1 class="hero-title">Beneath the Melting Ice:</h1>
     <h2 class="hero-sub">Magnetic Instability Threatening New Arctic Shipping Paths</h2>
 
-    <div style="margin-top:1.2rem; font-size:0.95rem;">
-      Mujun Kim — <a href="mailto:mkim264@gmu.edu" style="color:#9bd7ff;">mkim264@gmu.edu</a> ·
-      Seungeun Choi — <a href="mailto:schoi72@gmu.edu" style="color:#9bd7ff;">schoi72@gmu.edu</a><br>
+    <div class="hero-names">
+      Mujun Kim — <a href="mailto:mkim264@gmu.edu">mkim264@gmu.edu</a> ·
+      Seungeun Choi — <a href="mailto:schoi72@gmu.edu">schoi72@gmu.edu</a><br>
       George Mason University Korea
     </div>
   </div>
 </section>
 
 
-<!-- CHAPTER 1 -->
+<!-- ---------------------------------------------------
+     ABSTRACT
+--------------------------------------------------- -->
+<section class="section fade-section">
+  <div class="container is-max-desktop">
+    <h2 class="title">Abstract</h2>
+
+    <div class="abstract-box">
+      <p>
+        As the Arctic warms at unprecedented speed, two major shipping corridors—the Northern Sea Route (NSR) and
+        Northwest Passage (NWP)—are becoming increasingly navigable. Yet beneath the opportunity lies an invisible
+        hazard: magnetic instability that disrupts GNSS accuracy and compass reliability. This project investigates
+        how magnetic-field hotspots overlap with emerging Arctic shipping routes and what these intersections mean
+        for future navigation safety.
+      </p>
+
+      <details>
+        <summary><strong>Read More ▼</strong></summary>
+        <div style="height:15px;"></div>
+
+        <p>
+          Using the World Magnetic Model (WMM2025), we identified steep inclination zones and strong magnetic gradients—
+          the conditions most strongly associated with GNSS drift. Because real GNSS degradation data in the Arctic
+          remains limited, we implemented a physics-informed simulation that magnifies drift in high-gradient regions.
+        </p>
+
+        <p>
+          Our findings reveal that long-term sea-ice loss is opening physical passageways, but the Arctic’s magnetic
+          environment introduces navigation challenges that require greater attention from the maritime sector.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+<!-- ---------------------------------------------------
+     CHAPTER 1 — THE CHANGING ARCTIC
+--------------------------------------------------- -->
 <section class="section fade-section">
   <h2 class="title">The Changing Arctic</h2>
 
   <div class="container is-max-desktop">
 
     <div class="arctic-box">
-      The Arctic is warming almost four times faster than the rest of the world. As temperatures rise, summer sea-ice
-      continues to shrink, opening waters that were once locked by ice. These environmental changes are making the
-      Northern Sea Route (NSR) and Northwest Passage (NWP) more accessible for seasonal navigation.
+      The Arctic is warming nearly four times faster than the global average. This rapid temperature rise is reshaping
+      sea-ice distribution and making previously inaccessible waters navigable for longer portions of the year.
+      Understanding how the region is changing is the first step toward understanding the risks facing future vessels.
     </div>
 
     <figure>
       <img src="./static/images/global_temp.png" class="centered-img">
-      <figcaption style="text-align:center; margin-top:10px;">Figure 1. Global temperature anomalies.</figcaption>
+      <figcaption style="text-align:center; margin-top:10px;">
+        Figure 1. Global temperature anomalies showing persistent long-term warming.
+      </figcaption>
     </figure>
+
+    <div class="arctic-box">
+      Summer sea-ice extent has declined sharply over the past four decades. As multi-year ice retreats, seasonal
+      openings expand the potential operating windows for commercial shipping through both the NSR and NWP.
+    </div>
 
     <figure>
       <img src="./static/images/seaice_decline.png" class="centered-img">
-      <figcaption style="text-align:center; margin-top:10px;">Figure 2. Arctic sea-ice decline (1978–2021).</figcaption>
+      <figcaption style="text-align:center; margin-top:10px;">
+        Figure 2. Long-term decline in Arctic summer sea-ice extent (NSIDC).
+      </figcaption>
     </figure>
+
+    <div class="arctic-box">
+      New opportunities arise as these routes shorten the distance between Asia, Europe, and North America.
+      Yet, while the surface appears navigable, deeper challenges remain—particularly those related to the
+      Arctic’s extreme magnetic environment.
+    </div>
 
   </div>
 </section>
-
-
-<!-- CHAPTER 2 -->
+<!-- ---------------------------------------------------
+     CHAPTER 2 — THE HIDDEN NAVIGATION PROBLEM
+--------------------------------------------------- -->
 <section class="section fade-section">
   <h2 class="title">The Hidden Navigation Problem</h2>
 
   <div class="container is-max-desktop">
 
     <div class="arctic-box">
-      Although melting ice is improving physical accessibility, the Arctic hides a unique challenge: magnetic-field
-      instability. Near the poles, Earth's magnetic field dips steeply and shifts rapidly over short distances—conditions
-      that can degrade GNSS accuracy and compass reliability.
+      Although open water may suggest easier navigation, the Arctic hides a major challenge beneath the surface:
+      magnetic instability. Near the poles, Earth’s magnetic field dips steeply into the planet and changes more
+      abruptly across short distances. These shifts can distort compass directions, weaken GNSS stability, and
+      introduce subtle—but dangerous—navigation drift.
+    </div>
+
+    <div class="arctic-box">
+      Two factors influence this instability:
+      <ul style="margin-top:10px;">
+        <li><strong>Magnetic Inclination:</strong> the angle at which magnetic field lines enter the Earth. This angle becomes
+        extremely steep near the poles, sometimes exceeding 80°.</li>
+        <li><strong>Magnetic Gradient:</strong> how fast the magnetic field changes across distance. High gradients cause
+        instruments to behave unpredictably.</li>
+      </ul>
     </div>
 
     <figure>
       <img src="./static/images/magnetic_inclination.png" class="centered-img">
       <figcaption style="text-align:center; margin-top:10px;">
-        Figure 3. Magnetic inclination — extremely steep near the poles.
+        Figure 3. Magnetic inclination across the Arctic (WMM2025). Steeper angles near the poles create unstable conditions for navigation.
       </figcaption>
     </figure>
+
+    <div class="arctic-box">
+      Because Arctic shipping routes, especially the NSR and NWP, pass directly through these zones of instability,
+      vessels must operate in environments where navigation systems face far more stress than in lower latitudes.
+      This hidden problem is often overshadowed by discussions of sea-ice loss, yet it may rapidly become one of the
+      most important safety concerns in emerging Arctic maritime trade.
+    </div>
 
   </div>
 </section>
 
 
-<!-- CHAPTER 3 -->
+<!-- ---------------------------------------------------
+     CHAPTER 3 — HOW WE MAPPED THE INVISIBLE
+--------------------------------------------------- -->
 <section class="section fade-section">
   <h2 class="title">How We Mapped the Invisible</h2>
 
   <div class="container is-max-desktop">
 
     <div class="arctic-box">
-      To understand where navigation becomes unstable, we combined magnetic-field models with real Arctic shipping routes.
-      Using the World Magnetic Model 2025 (WMM2025), we mapped high-gradient magnetic regions and overlaid them onto NSR
-      and NWP maritime pathways.
+      Mapping magnetic instability is not as straightforward as mapping sea-ice change. While satellite observations
+      provide continuous updates on temperature and ice coverage, high-resolution navigation data in the Arctic is
+      extremely limited. To address this gap, we designed a method combining physical models, maritime route data,
+      and simulation-based estimates of GNSS drift.
+    </div>
+
+    <div class="arctic-box">
+      <strong>Step 1 — Magnetic Model</strong><br>
+      We used the <strong>World Magnetic Model 2025 (WMM2025)</strong> to extract magnetic inclination and magnetic-field
+      gradient values across the Arctic. These metrics identify regions where the magnetic field changes in ways that
+      can disrupt navigation.
+    </div>
+
+    <div class="arctic-box">
+      <strong>Step 2 — Route Overlay</strong><br>
+      Using publicly available maritime geometry data from the European Space Agency (ESA), we plotted the Northern
+      Sea Route and Northwest Passage. Overlaying these routes directly onto magnetic hotspot maps allowed us to see
+      where vessels are most likely to encounter navigation instability.
     </div>
 
     <figure>
       <img src="./static/images/arctic_routes.png" class="centered-img">
-      <figcaption style="text-align:center; margin-top:10px;">Figure 4. Northern Sea Route & Northwest Passage.</figcaption>
+      <figcaption style="text-align:center; margin-top:10px;">
+        Figure 4. NSR and NWP shipping routes positioned over Arctic waters.
+      </figcaption>
     </figure>
+
+    <div class="arctic-box">
+      <strong>Step 3 — GNSS Drift Simulation</strong><br>
+      Unlike sea-ice or atmospheric datasets, GNSS drift measurements in the Arctic are sparse. To approximate conditions,
+      we developed a simulation that increases GNSS error in areas where the magnetic gradient steepens. This method
+      captures how real vessels might experience positional drift even without storms or equipment malfunction.
+    </div>
 
     <figure>
       <img src="./static/images/magnetic_hotspots.png" class="centered-img">
       <figcaption style="text-align:center; margin-top:10px;">
-        Figure 5. Magnetic-field gradient hotspots (WMM2025).
+        Figure 5. Magnetic gradient hotspots derived from WMM2025—areas where GNSS drift is most likely to increase.
       </figcaption>
     </figure>
 
+    <div class="arctic-box">
+      <strong>Step 4 — Risk Mapping</strong><br>
+      Finally, we combined hotspot locations with simulated GNSS drift patterns to build a map showing the most
+      vulnerable sections of NSR and NWP. These maps offer a realistic first estimate of where future vessels may
+      require enhanced navigation support.
+    </div>
+
   </div>
 </section>
-
-
-<!-- CHAPTER 4 -->
+<!-- ---------------------------------------------------
+     CHAPTER 4 — WHAT THE MAPS REVEAL
+--------------------------------------------------- -->
 <section class="section fade-section">
   <h2 class="title">What the Maps Reveal</h2>
 
   <div class="container is-max-desktop">
 
     <div class="arctic-box">
-      Our analysis shows that both NSR and NWP intersect regions with high magnetic-field gradients. These are the areas
-      where GNSS drift and compass deviation are most likely to occur, especially during geomagnetic disturbances.
+      Our combined mapping approach reveals three major findings about Arctic navigation risk. These findings reflect
+      patterns seen across the NSR and NWP when magnetic instability, route geometry, and simulated GNSS drift are
+      analyzed together. Each pattern suggests a distinct type of vulnerability that future vessels may face.
+    </div>
+
+    <div class="arctic-box">
+      <strong>Finding 1 — Hotspot Clusters Form Along Siberian and Canadian Arctic Borders</strong><br>
+      Magnetic gradients strengthen significantly along the northern coast of Russia and parts of the Canadian
+      Archipelago. These clusters overlap with regions where vessels often navigate close to shore or through narrow
+      passages, increasing the possibility of drift-related deviations.
+    </div>
+
+    <figure>
+      <img src="./static/images/magnetic_hotspots.png" class="centered-img">
+      <figcaption style="text-align:center; margin-top:10px;">
+        Figure 6. Magnetic-field hotspot clusters, particularly strong along the Siberian shelf and Canadian Arctic islands.
+      </figcaption>
+    </figure>
+
+    <div class="arctic-box">
+      <strong>Finding 2 — Eastern NSR Shows High Vulnerability</strong><br>
+      When NSR is overlaid on the hotspot map, the eastern segment—approaching the Bering Strait—crosses regions with
+      some of the steepest gradients. Simulation results indicate that this segment experiences the largest increase
+      in GNSS drift, especially under moderate geomagnetic activity.
+    </div>
+
+    <div class="arctic-box">
+      <strong>Finding 3 — Central NWP Is Sensitive to GNSS Drift</strong><br>
+      Although magnetic gradients are more dispersed across the Canadian Arctic Archipelago, the central section of
+      NWP shows notable simulated GNSS drift. Narrow passages and shifting ice conditions make this combination
+      especially important for operational safety.
     </div>
 
     <figure>
       <img src="./static/images/gnss_error.png" class="centered-img">
       <figcaption style="text-align:center; margin-top:10px;">
-        Figure 6. Simulated GNSS error density along Arctic routes.
+        Figure 7. Simulated GNSS error density near hotspot regions. Darker areas represent higher uncertainty.
       </figcaption>
     </figure>
+
+    <div class="arctic-box">
+      Together, these patterns highlight that emerging Arctic routes are not simply shorter versions of existing
+      global passages—they introduce new navigational dynamics driven by Earth's magnetic environment.
+    </div>
 
   </div>
 </section>
 
 
-<!-- WHY IT MATTERS -->
+<!-- ---------------------------------------------------
+     WHY IT MATTERS — IMPLICATIONS
+--------------------------------------------------- -->
 <section class="section fade-section">
   <h2 class="title">Why It Matters</h2>
 
   <div class="container is-max-desktop">
 
     <div class="arctic-box">
-      As Arctic trade increases, even small navigation errors can create major risks in narrow or ice-drifting channels.
-      Ships crossing magnetic hotspots may require enhanced GNSS correction systems, multi-constellation receivers,
-      inertial backup sensors, and real-time monitoring of geomagnetic activity.
+      As Arctic shipping grows, navigation reliability will become one of the region's most pressing safety issues.
+      Even small GNSS errors—on the order of a few hundred meters—can lead to significant operational risks in narrow
+      channels, shallow waters, or areas where sea-ice drifts unpredictably.
+    </div>
+
+    <div class="arctic-box">
+      <strong>Operational Impact</strong><br>
+      Ships traveling through high-gradient zones may require enhanced navigation systems, multi-constellation GNSS
+      receivers, or inertial backup systems to maintain accurate positioning.
+    </div>
+
+    <div class="arctic-box">
+      <strong>Policy & Infrastructure</strong><br>
+      Arctic nations may need to expand real-time geomagnetic monitoring and provide navigational advisories during
+      periods of heightened magnetic disturbance.
+    </div>
+
+    <div class="arctic-box">
+      <strong>Scientific Opportunity</strong><br>
+      Better Arctic magnetic and GNSS datasets would significantly improve our understanding of how navigation systems
+      behave near the poles—an area of growing interest as global trade shifts northward.
     </div>
 
   </div>
 </section>
 
 
-<!-- REFERENCES -->
-<section class="section fade-section" style="background:#f0f9ff;">
+<!-- ---------------------------------------------------
+     REFERENCES
+--------------------------------------------------- -->
+<section class="section fade-section" style="background:#dff2ff;">
   <h2 class="title">References</h2>
 
   <div class="container is-max-desktop">
     <div class="arctic-box">
       <ol>
-        <li>Berkeley Earth — Global Temperature Dataset.</li>
-        <li>NSIDC — Arctic Sea Ice Index.</li>
-        <li>European Space Agency (ESA) — Arctic Route Visualization.</li>
-        <li>NOAA & British Geological Survey — World Magnetic Model (2025).</li>
-        <li>Custom GNSS Error Simulation (2025).</li>
+        <li>Berkeley Earth. Global Temperature Dataset.</li>
+        <li>European Space Agency (ESA). Arctic Shipping Routes Dataset, 2019.</li>
+        <li>NSIDC. Sea Ice Index v3 Dataset.</li>
+        <li>NOAA National Centers for Environmental Information. Climate Records.</li>
+        <li>NOAA Space Weather Prediction Center. Planetary K-index & Magnetic Activity.</li>
+        <li>World Magnetic Model (WMM2025). NOAA & British Geological Survey.</li>
       </ol>
     </div>
   </div>
 </section>
 
 
-<!-- FOOTER -->
-<footer class="footer" style="background:#08345d; color:white; padding:2rem;">
+<!-- ---------------------------------------------------
+     FOOTER
+--------------------------------------------------- -->
+<footer class="footer" style="background:#e0f1ff; color:#0b2742; margin-top:3rem;">
   <div class="content has-text-centered">
-    <p><strong>Contact</strong></p>
-    <p>Mujun Kim — <a href="mailto:mkim264@gmu.edu" style="color:#9cdfff;">mkim264@gmu.edu</a></p>
-    <p>Seungeun Choi — <a href="mailto:schoi72@gmu.edu" style="color:#9cdfff;">schoi72@gmu.edu</a></p>
-    <p style="opacity:0.8;">George Mason University Korea</p>
+    <p><strong>Contact Information</strong></p>
+    <p>Mujun Kim — <a href="mailto:mkim264@gmu.edu">mkim264@gmu.edu</a></p>
+    <p>Seungeun Choi — <a href="mailto:schoi72@gmu.edu">schoi72@gmu.edu</a></p>
+    <p style="opacity:0.7;">George Mason University Korea</p>
   </div>
 </footer>
 
 
-<!-- SCROLL ANIMATION -->
+<!-- ---------------------------------------------------
+     SCROLL ANIMATION SCRIPT
+--------------------------------------------------- -->
 <script>
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
@@ -297,10 +487,10 @@ const observer = new IntersectionObserver((entries)=>{
       entry.target.classList.add('visible');
     }
   });
-}, {threshold:0.15});
+}, { threshold: 0.15 });
 
-document.querySelectorAll('.fade-section').forEach(sec=>{
-  observer.observe(sec);
+document.querySelectorAll('.fade-section').forEach(section=>{
+  observer.observe(section);
 });
 </script>
 
