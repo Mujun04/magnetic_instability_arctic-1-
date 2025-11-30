@@ -21,6 +21,30 @@ body {
   line-height: 1.45;
   overflow-x: hidden;
 }
+#toc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+#toc a {
+  display: block;
+  margin-left: 12px;
+  color: #0b2742;
+  padding: 2px 0;
+  transition: color 0.2s ease;
+}
+
+#toc a:hover {
+  color: #0095d9;
+}
+
+.toc-section {
+  margin-top: 14px;
+  margin-bottom: 4px;
+  font-weight: 600;
+  color: #003357;
+  font-size: 1rem;
+}
 
 :root {
   --navy: #0b2742;
@@ -231,6 +255,31 @@ a { color: var(--cyan); }
   color: #0095d9;
   margin-left: 4px;
 }
+   #toc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+#toc a {
+  display: block;
+  margin-left: 12px;
+  color: #0b2742;
+  padding: 2px 0;
+  transition: color 0.2s ease;
+}
+
+#toc a:hover {
+  color: #0095d9;
+}
+
+.toc-section {
+  margin-top: 14px;
+  margin-bottom: 4px;
+  font-weight: 600;
+  color: #003357;
+  font-size: 1rem;
+}
+
 
 /* LANGUAGE TOGGLE (left fixed) */
 #langToggle {
@@ -284,85 +333,33 @@ a { color: var(--cyan); }
 
 <!-- TABLE OF CONTENTS -->
 <div id="toc">
-  <h4 data-en="📘 Sections" data-kr="📘 섹션 목록">📘 Sections</h4>
+  <!-- OVERVIEW -->
+  <div class="toc-section" data-en="Overview" data-kr="개요">Overview</div>
+  <a href="#abstract" data-en="• Abstract" data-kr="• 초록">• Abstract</a>
+  <a href="#intro" data-en="• Introduction" data-kr="• 서론">• Introduction</a>
+  <a href="#terms" data-en="• Key Terms" data-kr="• 핵심 용어">• Key Terms</a>
+  <a href="#rq" data-en="• Research Questions" data-kr="• 연구 질문">• Research Questions</a>
 
-  <a href="#abstract"
-     data-en="Abstract"
-     data-kr="초록">
-     Abstract
-  </a>
+  <!-- BACKGROUND -->
+  <div class="toc-section" data-en="Background" data-kr="배경">Background</div>
+  <a href="#warming" data-en="• Arctic Warming" data-kr="• 북극 온난화">• Arctic Warming</a>
+  <a href="#routes" data-en="• Why Arctic Routes Matter" data-kr="• 북극 항로의 중요성">• Why Arctic Routes Matter</a>
+  <a href="#magnetic" data-en="• Magnetic Instability" data-kr="• 자기장 불안정성">• Magnetic Instability</a>
 
-  <a href="#intro"
-     data-en="Introduction"
-     data-kr="서론">
-     Introduction
-  </a>
+  <!-- FINDINGS -->
+  <div class="toc-section" data-en="Findings" data-kr="결과">Findings</div>
+  <a href="#results" data-en="• Results" data-kr="• 분석 결과">• Results</a>
+  <a href="#interaction" data-en="• Sea-Ice × Magnetic Instability" data-kr="• 해빙 감소 × 자기장 불안정성">• Sea-Ice × Magnetic Instability</a>
 
-  <a href="#terms"
-     data-en="Key Terms"
-     data-kr="핵심 용어">
-     Key Terms
-  </a>
+  <!-- DISCUSSION -->
+  <div class="toc-section" data-en="Discussion" data-kr="논의">Discussion</div>
+  <a href="#method" data-en="• Methodology" data-kr="• 연구 방법론">• Methodology</a>
+  <a href="#economic" data-en="• Economic Implications" data-kr="• 경제적 의미">• Economic Implications</a>
 
-  <a href="#rq"
-     data-en="Research Questions"
-     data-kr="연구 질문">
-     Research Questions
-  </a>
-
-  <a href="#warming"
-     data-en="Arctic Warming"
-     data-kr="북극 온난화">
-     Arctic Warming
-  </a>
-
-  <a href="#routes"
-     data-en="Why Arctic Routes Matter"
-     data-kr="북극 항로의 중요성">
-     Why Arctic Routes Matter
-  </a>
-
-  <a href="#magnetic"
-     data-en="Magnetic Instability"
-     data-kr="자기장 불안정성">
-     Magnetic Instability
-  </a>
-
-  <a href="#results"
-     data-en="Results"
-     data-kr="결과">
-     Results
-  </a>
-
-  <a href="#interaction"
-     data-en="Sea-Ice × Magnetic Instability"
-     data-kr="해빙 감소 × 자기장 불안정성">
-     Sea-Ice × Magnetic Instability
-  </a>
-
-  <a href="#method"
-     data-en="Methodology"
-     data-kr="연구 방법론">
-     Methodology
-  </a>
-
-  <a href="#economic"
-     data-en="Economic Implications"
-     data-kr="경제적 영향">
-     Economic Implications
-  </a>
-
-  <a href="#conclusion"
-     data-en="Conclusion"
-     data-kr="결론">
-     Conclusion
-  </a>
-
-  <a href="#references"
-     data-en="References"
-     data-kr="참고 문헌">
-     References
-  </a>
+  <!-- WRAP-UP -->
+  <div class="toc-section" data-en="Wrap-up" data-kr="마무리">Wrap-up</div>
+  <a href="#conclusion" data-en="• Conclusion" data-kr="• 결론">• Conclusion</a>
+  <a href="#references" data-en="• References" data-kr="• 참고 문헌">• References</a>
 </div>
 
 
