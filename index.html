@@ -21,17 +21,36 @@ body {
   line-height: 1.45;
   overflow-x: hidden;
 }
+/* TOC 전체 박스 위치 고정 */
 #toc {
-  font-size: 0.95rem;
-  line-height: 1.5;
+  position: fixed;
+  top: 90px;           /* 화면 위에서 90px 아래 */
+  right: 45px;         /* 페이지 오른쪽에서 약간 띄움 */
+  width: 240px;
+  max-height: 80vh;    /* 화면 높이의 80%까지만 사용 → 절대 안잘림 */
+  overflow-y: auto;    /* 나머지는 내부 스크롤 */
+  padding: 20px 24px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  scrollbar-width: thin;  /* 파이어폭스 */
+}
+
+#toc::-webkit-scrollbar {
+  width: 6px;
+}
+
+#toc::-webkit-scrollbar-thumb {
+  background: #bdd8ee;
+  border-radius: 20px;
 }
 
 #toc a {
   display: block;
-  margin-left: 12px;
+  padding: 4px 0;
   color: #0b2742;
-  padding: 2px 0;
-  transition: color 0.2s ease;
+  text-decoration: none;
+  transition: color .2s;
 }
 
 #toc a:hover {
@@ -39,11 +58,10 @@ body {
 }
 
 .toc-section {
-  margin-top: 14px;
+  margin-top: 18px;
+  font-weight: 700;
+  color: #0b2742;
   margin-bottom: 4px;
-  font-weight: 600;
-  color: #003357;
-  font-size: 1rem;
 }
 
 :root {
