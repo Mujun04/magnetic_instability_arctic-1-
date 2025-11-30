@@ -14,14 +14,14 @@
 /* ---------------------------------------------------
    GLOBAL — Light Ice Blue Navigation Dashboard
 --------------------------------------------------- */
-
 body {
   background: #eaf6ff;
   font-family: 'Inter', sans-serif;
   color: #0b2742;
-  line-height: 1.65;
+  line-height: 1.45;
   overflow-x: hidden;
 }
+
 
 :root {
   --navy: #0b2742;
@@ -32,8 +32,8 @@ body {
 }
 
 .section {
-  padding-top: 4.2rem;
-  padding-bottom: 4.2rem;
+  padding-top: 2.6rem;
+  padding-bottom: 2.6rem;
 }
 
 /* Titles */
@@ -41,34 +41,35 @@ h2.title {
   color: var(--navy);
   text-transform: uppercase;
   letter-spacing: 1.4px;
-  font-weight: 400;
-  font-size: 2.6rem;
+  font-weight: 300;
   text-align: center;
-  margin-bottom: 2.8rem;
+  margin-bottom: 2rem;
   position: relative;
+  font-size: 2.1rem;
 }
 
 h2.title::after {
   content: "";
-  width: 90px;
-  height: 4px;
+  width: 70px;
+  height: 3px;
   background: var(--cyan);
   position: absolute;
-  bottom: -14px;
+  bottom: -12px;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 5px;
 }
 
+
 /* Cards */
 .arctic-box {
   background: var(--glass-bg);
-  padding: 1.7rem;
+  padding: 1.3rem;
   border-radius: 12px;
   border-left: 4px solid var(--cyan);
   border: 1px solid var(--border-soft);
   margin-bottom: 2rem;
-  width: min(95%, 1100px);
+  width: min(90%, 900px);
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 3px 16px rgba(0,0,0,0.08);
@@ -96,8 +97,8 @@ figure {
   background: var(--glass-bg);
   border: 1px solid var(--border-soft);
   border-radius: 14px;
-  padding: 18px;
-  width: min(95%, 1100px);
+  padding: 14px;
+  width: min(90%, 900px);
   margin: 3rem auto;
   box-shadow: 0 4px 18px rgba(0,0,0,0.1);
   transition: transform .35s ease;
@@ -133,13 +134,13 @@ figure:hover {
 
 .hero-title {
   color: var(--navy);
-  font-size: 3.8rem;
+  font-size: 3rem;
   font-weight: 400;
 }
 
 .hero-sub {
   color: var(--cyan);
-  font-size: 2.3rem;
+  font-size: 1.8rem;
   margin-top: .6rem;
 }
 
@@ -295,14 +296,14 @@ a { color: var(--cyan); }
   <figure>
     <img src="./static/images/global_temp.png" class="centered-img">
     <figcaption>
-      <strong>Figure X.</strong> Global temperature anomalies showing accelerated warming in the Arctic, where temperatures rise significantly faster than the global mean.
+      <strong>Figure 1.</strong> Global temperature anomalies showing accelerated warming in the Arctic, where temperatures rise significantly faster than the global mean.
     </figcaption>
   </figure>
 
   <figure>
     <img src="./static/images/seaice_decline.png" class="centered-img">
     <figcaption>
-      <strong>Figure X.</strong> Long-term decline in Arctic summer sea-ice extent, illustrating the reduction of multi-year ice and expansion of seasonally open waters.
+      <strong>Figure 2.</strong> Long-term decline in Arctic summer sea-ice extent, illustrating the reduction of multi-year ice and expansion of seasonally open waters.
     </figcaption>
   </figure>
 
@@ -323,7 +324,7 @@ a { color: var(--cyan); }
   <figure>
     <img src="./static/images/arctic_routes.png" class="centered-img">
     <figcaption>
-      <strong>Figure X.</strong> Major Arctic shipping routes, including the Northern Sea Route (NSR) and Northwest Passage (NWP), which become increasingly navigable as summer sea-ice extent declines.
+      <strong>Figure 3.</strong> Major Arctic shipping routes, including the Northern Sea Route (NSR) and Northwest Passage (NWP), which become increasingly navigable as summer sea-ice extent declines.
     </figcaption>
   </figure>
 
@@ -348,7 +349,7 @@ a { color: var(--cyan); }
   <figure>
     <img src="./static/images/magnetic_inclination.png" class="centered-img">
     <figcaption>
-      <strong>Figure X.</strong> Magnetic inclination across the Arctic. Inclination angles approach 90° near the magnetic pole, creating unstable conditions for compass-based and satellite-assisted navigation.
+      <strong>Figure 4.</strong> Magnetic inclination across the Arctic. Inclination angles approach 90° near the magnetic pole, creating unstable conditions for compass-based and satellite-assisted navigation.
     </figcaption>
   </figure>
 
@@ -367,14 +368,14 @@ a { color: var(--cyan); }
   <figure>
     <img src="./static/images/magnetic_hotspots.png" class="centered-img">
     <figcaption>
-      <strong>Figure X.</strong> Magnetic-field gradient hotspots across the Arctic. Regions with rapid changes in magnetic intensity appear as concentrated red zones, indicating areas where GNSS performance and compass stability are most likely to degrade.
+      <strong>Figure 5.</strong> Magnetic-field gradient hotspots across the Arctic. Regions with rapid changes in magnetic intensity appear as concentrated red zones, indicating areas where GNSS performance and compass stability are most likely to degrade.
     </figcaption>
   </figure>
 
   <figure>
     <img src="./static/images/gnss_error.png" class="centered-img">
     <figcaption>
-      <strong>Figure X.</strong> Simulated GNSS error density using a physics-informed model. Darker regions represent higher positional drift, particularly along the eastern Northern Sea Route (NSR) and sections of the Northwest Passage (NWP).
+      <strong>Figure 6.</strong> Simulated GNSS error density using a physics-informed model. Darker regions represent higher positional drift, particularly along the eastern Northern Sea Route (NSR) and sections of the Northwest Passage (NWP).
     </figcaption>
   </figure>
 
