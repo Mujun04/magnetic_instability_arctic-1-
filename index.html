@@ -744,6 +744,13 @@ document.getElementById("langToggle").onclick = () => {
     el.innerHTML = lang === "EN" ? el.dataset.en : el.dataset.kr;
   });
 };
+   // 🔥 INITIAL LANGUAGE SYNC — FIX FOR EMPTY TEXT ON FIRST LOAD
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    el.innerHTML = el.dataset.en;   // 초기 영어 버전 로드
+  });
+});
+</script>
 </script>
 
 </body>
