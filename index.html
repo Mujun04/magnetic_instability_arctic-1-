@@ -23,49 +23,13 @@ body {
 }
    <div id="current-section"></div>
 <div id="progress-bar"></div>
-
-/* TOC 전체 박스 위치 고정 */
-#toc {
-  position: fixed;
-  top: 90px;           /* 화면 위에서 90px 아래 */
-  right: 45px;         /* 페이지 오른쪽에서 약간 띄움 */
-  width: 240px;
-  max-height: 80vh;    /* 화면 높이의 80%까지만 사용 → 절대 안잘림 */
-  overflow-y: auto;    /* 나머지는 내부 스크롤 */
-  padding: 20px 24px;
-  background: white;
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  scrollbar-width: thin;  /* 파이어폭스 */
+#references-section {
+  background: #e0f1ff;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
 }
 
-#toc::-webkit-scrollbar {
-  width: 6px;
-}
 
-#toc::-webkit-scrollbar-thumb {
-  background: #bdd8ee;
-  border-radius: 20px;
-}
-
-#toc a {
-  display: block;
-  padding: 4px 0;
-  color: #0b2742;
-  text-decoration: none;
-  transition: color .2s;
-}
-
-#toc a:hover {
-  color: #0095d9;
-}
-
-.toc-section {
-  margin-top: 18px;
-  font-weight: 700;
-  color: #0b2742;
-  margin-bottom: 4px;
-}
 
 :root {
   --navy: #0b2742;
@@ -144,20 +108,6 @@ h2.title::after {
   border-radius: 0 4px 4px 0;
 }
 
-/* TOC ACTIVE LINK */
-#toc a.active {
-  color: #0095d9;
-  font-weight: 700;
-}
-
-/* TOC SCROLL BAR */
-#toc::-webkit-scrollbar {
-  width: 6px;
-}
-#toc::-webkit-scrollbar-thumb {
-  background: #bdd8ee;
-  border-radius: 20px;
-}
 
 /* Tooltip Box */
 .rq-box {
@@ -285,62 +235,62 @@ figure:hover {
 
 a { color: var(--cyan); }
 
-/* TABLE OF CONTENTS (right fixed) */
+/* --- FINAL FIXED TOC (No cut-off) --- */
 #toc {
   position: fixed;
-  top: 120px;
-  right: 25px;
-  width: 180px;
-  background: rgba(255,255,255,0.9);
-  padding: 12px 15px;
-  border-radius: 12px;
+  top: 110px;
+  right: 30px;
+  width: 240px;
+
+  max-height: 78vh;         /* 화면에 꽉 차지 않게 */
+  overflow-y: auto;         /* 내부 스크롤 활성화 */
+
+  padding: 20px 22px;
+  background: #ffffffd9;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   border: 1px solid #bdd8ee;
-  font-size: 0.92rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  z-index: 999;
+
+  z-index: 9900;
+  font-size: 0.96rem;
+  line-height: 1.45;
 }
 
-#toc h4 {
-  font-weight: 600;
-  margin-bottom: 8px;
-  font-size: 0.95rem;
-}
-
-#toc a {
-  display: block;
-  color: #0b2742;
-  margin: 7px 0;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-#toc a:hover {
-  color: #0095d9;
-  margin-left: 4px;
-}
-   #toc {
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-#toc a {
-  display: block;
-  margin-left: 12px;
-  color: #0b2742;
-  padding: 2px 0;
-  transition: color 0.2s ease;
-}
-
-#toc a:hover {
-  color: #0095d9;
-}
-
+/* TOC HEADER */
 .toc-section {
-  margin-top: 14px;
-  margin-bottom: 4px;
-  font-weight: 600;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-weight: 700;
   color: #003357;
-  font-size: 1rem;
+}
+
+/* TOC LINKS */
+#toc a {
+  display: block;
+  margin-left: 10px;
+  padding: 3px 0;
+  color: #0b2742;
+  text-decoration: none;
+  transition: .2s ease;
+}
+
+#toc a:hover {
+  color: #0095d9;
+  margin-left: 14px;
+}
+
+#toc a.active {
+  color: #0095d9;
+  font-weight: 700;
+}
+
+/* Scrollbar style */
+#toc::-webkit-scrollbar {
+  width: 6px;
+}
+#toc::-webkit-scrollbar-thumb {
+  background: #bdd8ee;
+  border-radius: 20px;
 }
 
 .references-box {
@@ -968,7 +918,8 @@ a { color: var(--cyan); }
 <!-- ---------------------------------------------------
      14. REFERENCES  (FIXED—NO LANGUAGE TOGGLE)
 --------------------------------------------------- -->
-<section class="section fade-section" style="background:#e0f1ff;">
+<section id="references-section" class="section fade-section">
+
    
    <h2 class="title">References</h2>
    <div class="container is-max-desktop">
