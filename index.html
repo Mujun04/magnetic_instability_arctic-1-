@@ -21,6 +21,9 @@ body {
   line-height: 1.45;
   overflow-x: hidden;
 }
+   <div id="current-section"></div>
+<div id="progress-bar"></div>
+
 /* TOC 전체 박스 위치 고정 */
 #toc {
   position: fixed;
@@ -112,6 +115,48 @@ h2.title::after {
 .rq-tooltip {
   position: relative;
   display: inline-block;
+}
+/* CURRENT SECTION LABEL */
+#current-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
+  font-size: 0.9rem;
+  color: #003357;
+  font-weight: 600;
+  z-index: 9999;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* PROGRESS BAR */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: #0095d9;
+  width: 0%;
+  z-index: 10000;
+  border-radius: 0 4px 4px 0;
+}
+
+/* TOC ACTIVE LINK */
+#toc a.active {
+  color: #0095d9;
+  font-weight: 700;
+}
+
+/* TOC SCROLL BAR */
+#toc::-webkit-scrollbar {
+  width: 6px;
+}
+#toc::-webkit-scrollbar-thumb {
+  background: #bdd8ee;
+  border-radius: 20px;
 }
 
 /* Tooltip Box */
@@ -344,6 +389,41 @@ a { color: var(--cyan); }
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+.footer-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.footer-person {
+  text-align: center;
+}
+
+.footer-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+  color: #0b2742;
+}
+
+.footer-links a {
+  color: #006fa8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #0095d9;
+}
+
+.footer-sep {
+  margin: 0 6px;
+  color: #0b2742;
+  opacity: 0.55;
 }
 
 </style>
@@ -901,16 +981,35 @@ a { color: var(--cyan); }
 --------------------------------------------------- -->
 <footer class="footer" style="background:#e0f1ff; color:#0b2742; margin-top:3rem;">
   <div class="content has-text-centered">
-    <p><strong>Contact Information</strong></p>
 
-    <p>
-      Mujun Kim — <a href="mailto:mkim264@gmu.edu">mkim264@gmu.edu</a><br>
-      Seungeun Choi — <a href="mailto:scho472@gmu.edu">scho472@gmu.edu</a>
-    </p>
+    <div class="footer-container">
 
-    <p style="opacity:0.7;">George Mason University Korea</p>
+      <!-- MUJUN -->
+      <div class="footer-person">
+        <div class="footer-name">Mujun Kim</div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/mujun-kim-96b73a392/" target="_blank">🔗 LinkedIn</a>
+          <span class="footer-sep">·</span>
+          <a href="mailto:mkim264@gmu.edu">✉ Email</a>
+        </div>
+      </div>
+
+      <!-- SEUNGEUN -->
+      <div class="footer-person">
+        <div class="footer-name">Seungeun Choi</div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/seungeun-choi-60b783291" target="_blank">🔗 LinkedIn</a>
+          <span class="footer-sep">·</span>
+          <a href="mailto:schoi72@gmu.edu">✉ Email</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="opacity:0.7; margin-top:18px;">George Mason University Korea</p>
   </div>
 </footer>
+
    <!-- ============================================================
      SCRIPT — Fade-in, TOC smooth-scroll, Language Toggle
 =============================================================== -->
@@ -929,7 +1028,6 @@ document.querySelectorAll('.fade-section').forEach(section=>{
   observer.observe(section);
 });
 
-
 // Smooth scrolling for TOC
 document.querySelectorAll('#toc a').forEach(link => {
   link.addEventListener('click', function(e) {
@@ -938,7 +1036,6 @@ document.querySelectorAll('#toc a').forEach(link => {
       .scrollIntoView({ behavior: 'smooth' });
   });
 });
-
 
 // Language Toggle
 let lang = "EN";
@@ -952,13 +1049,71 @@ document.getElementById("langToggle").onclick = () => {
     el.innerHTML = lang === "EN" ? el.dataset.en : el.dataset.kr;
   });
 };
-   // 🔥 INITIAL LANGUAGE SYNC — FIX FOR EMPTY TEXT ON FIRST LOAD
+
+// INITIAL LANGUAGE SYNC
 window.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll("[data-en]").forEach(el => {
-    el.innerHTML = el.dataset.en;   // 초기 영어 버전 로드
+    el.innerHTML = el.dataset.en;
   });
 });
 </script>
+
+
+<!-- 🔥🔥🔥 여기 아래에 새 ScrollSpy + ProgressBar 넣기 -->
+<script>
+
+/* ---------------------------
+   SCROLL SPY + CURRENT LABEL
+----------------------------*/
+
+// Sections with IDs
+const sections = document.querySelectorAll("section[id]");
+const tocLinks = document.querySelectorAll("#toc a");
+
+// Intersection observer for scroll spy
+const spyOptions = {
+  root: null,
+  threshold: 0.35,
+};
+
+const spyObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute("id");
+
+      // highlight TOC
+      tocLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${id}`) {
+          link.classList.add("active");
+        }
+      });
+
+      // update top "Now Reading"
+      const targetLink = document.querySelector(`#toc a[href="#${id}"]`);
+      if (targetLink) {
+        document.getElementById("current-section").innerText =
+          "📘 Now Reading: " + targetLink.dataset.en;
+      }
+    }
+  });
+}, spyOptions);
+
+sections.forEach(section => spyObserver.observe(section));
+
+
+/* ---------------------------
+    READING PROGRESS BAR
+----------------------------*/
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / docHeight) * 100;
+
+  document.getElementById("progress-bar").style.width = progress + "%";
+});
+
 </script>
 
 </body>
