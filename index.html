@@ -1178,7 +1178,23 @@ window.addEventListener("scroll", () => {
 document.getElementById("tocToggleBtn").addEventListener("click", () => {
   document.getElementById("toc").classList.toggle("open");
 });
+/* ---- MOBILE SHORT VERSION FOR "NOW READING" ---- */
+function shortenCurrentSectionText() {
+  const cs = document.getElementById("current-section");
+  if (!cs) return;
 
+  if (window.innerWidth < 600) {
+    const original = cs.dataset.original || cs.innerText;
+    cs.dataset.original = original;
+    cs.innerText = original.replace("📘 Now Reading: ", "📘 ");
+  } else {
+    if (cs.dataset.original) cs.innerText = cs.dataset.original;
+  }
+}
+
+window.addEventListener("DOMContentLoaded", shortenCurrentSectionText);
+window.addEventListener("resize", shortenCurrentSectionText);
+   
 </script>
 
 </body>
