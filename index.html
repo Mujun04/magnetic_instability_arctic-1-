@@ -1137,7 +1137,6 @@ const spyOptions = {
 const spyObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const id = entry.target.getAttribute("id");
 
       // highlight TOC
       tocLinks.forEach(link => {
@@ -1147,17 +1146,24 @@ const spyObserver = new IntersectionObserver(entries => {
         }
       });
 
-      // update top "Now Reading"
+      // update "Now Reading"
       const targetLink = document.querySelector(`#toc a[href="#${id}"]`);
       if (targetLink) {
-        document.getElementById("current-section").innerText =
-          "📘 Now Reading: " + targetLink.dataset.en;
+        const cs = document.getElementById("current-section");
+
+        if (window.innerWidth < 600) {
+          cs.innerText = "📘 " + targetLink.dataset.en;
+        } else {
+          cs.innerText = "📘 Now Reading: " + targetLink.dataset.en;
+        }
       }
+
     }
   });
 }, spyOptions);
 
 sections.forEach(section => spyObserver.observe(section));
+
 
    
 
@@ -1178,22 +1184,7 @@ window.addEventListener("scroll", () => {
 document.getElementById("tocToggleBtn").addEventListener("click", () => {
   document.getElementById("toc").classList.toggle("open");
 });
-/* ---- MOBILE SHORT VERSION FOR "NOW READING" ---- */
-function shortenCurrentSectionText() {
-  const cs = document.getElementById("current-section");
-  if (!cs) return;
 
-  if (window.innerWidth < 600) {
-    const original = cs.dataset.original || cs.innerText;
-    cs.dataset.original = original;
-    cs.innerText = original.replace("📘 Now Reading: ", "📘 ");
-  } else {
-    if (cs.dataset.original) cs.innerText = cs.dataset.original;
-  }
-}
-
-window.addEventListener("DOMContentLoaded", shortenCurrentSectionText);
-window.addEventListener("resize", shortenCurrentSectionText);
    
 </script>
 
